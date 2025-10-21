@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Card Animation Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Blog Card Animation Demo</h1>
+
+        <div class="cards-grid">
+            <!-- Card 1 - スクランブルアニメーション付き -->
+            <article class="card" data-id="1">
+                <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <span class="card-tag">Featured</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Interactive Text Animation</h2>
+                    <p class="card-description">マウスカーソルに反応するスクランブルテキストエフェクト</p>
+                    <span class="card-date">2025-10-21</span>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card" data-id="2">
+                <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <span class="card-tag">Design</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Modern UI Design</h2>
+                    <p class="card-description">最新のUIデザイントレンドとベストプラクティス</p>
+                    <span class="card-date">2025-10-20</span>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card" data-id="3">
+                <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <span class="card-tag">Development</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">GSAP Animation Guide</h2>
+                    <p class="card-description">GSAPを使った高度なWebアニメーション実装</p>
+                    <span class="card-date">2025-10-19</span>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card" data-id="4">
+                <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <span class="card-tag">Tutorial</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">CSS Grid Layouts</h2>
+                    <p class="card-description">レスポンシブなグリッドレイアウトの作り方</p>
+                    <span class="card-date">2025-10-18</span>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card" data-id="5">
+                <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <span class="card-tag">Performance</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Web Performance Tips</h2>
+                    <p class="card-description">サイトパフォーマンスを最適化する実践的なテクニック</p>
+                    <span class="card-date">2025-10-17</span>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card" data-id="6">
+                <div class="card-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <span class="card-tag">JavaScript</span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Advanced JavaScript</h2>
+                    <p class="card-description">JavaScriptの高度なテクニックとパターン</p>
+                    <span class="card-date">2025-10-16</span>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- 詳細モーダル -->
+    <div class="modal" id="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-tag" id="modalTag"></div>
+                <div class="modal-date" id="modalDate"></div>
+
+                <!-- スクランブルテキストエリア（Card 1用） -->
+                <div class="text-block" id="textBlock" style="display: none;">
+                    <p>
+                        Move your cursor over this text to see the scramble effect in action.
+                        The characters will animate when your mouse gets close to them.
+                    </p>
+                </div>
+
+                <!-- 通常のコンテンツエリア（その他のカード用） -->
+                <div class="normal-content" id="normalContent">
+                    <p id="modalDescription"></p>
+                    <div class="modal-full-content">
+                        <h3>詳細内容</h3>
+                        <p>ここにブログ記事の詳細内容が表示されます。画像、テキスト、コードサンプルなど、様々なコンテンツを配置できます。</p>
+                        <p>GSAPを使うことで、スムーズで印象的なアニメーションを簡単に実装できます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP and Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/SplitText.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrambleTextPlugin.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
